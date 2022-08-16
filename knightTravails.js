@@ -31,7 +31,6 @@ function validateMove(startNode, moveBy) {
 
 function knightMoves(start, end) {
   let current = new GraphNode(start);
-  let ans = null;
   const queue = [start];
   const moves = [
     [-2, -1],
@@ -54,8 +53,8 @@ function knightMoves(start, end) {
         node.path = current.path.concat([node.vertex]);
         node.edges.push(current.vertex);
         if (((current.vertex[0] === end[0]) && (current.vertex[1] === end[1]))) {
+          console.log(`The shortest path is ${current.path.length - 1} moves!`);
           return current.path;
-        //   ans = current.path;
         }
         current.edges.push(node.vertex);
         queue.push(node);
@@ -64,7 +63,8 @@ function knightMoves(start, end) {
     queue.shift();
     [current] = queue;
   }
-//   return ans;
 }
 
 console.log(knightMoves([0, 0], [7, 7]));
+console.log(knightMoves([0, 0], [3, 3]));
+console.log(knightMoves([3, 3], [4, 3]));
