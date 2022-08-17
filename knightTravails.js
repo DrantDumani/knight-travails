@@ -1,15 +1,3 @@
-const chessBoard = (() => {
-  const board = [];
-  for (let y = 0; y < 4; y += 1) {
-    const row = [];
-    for (let x = 0; x < 4; x += 1) {
-      row.push(x);
-    }
-    board.push(row);
-  }
-  return board;
-})();
-
 class GraphNode {
   constructor(vertex) {
     this.vertex = vertex;
@@ -44,7 +32,6 @@ function knightMoves(start, end) {
   ];
 
   while (queue.length > 0) {
-    // eslint-disable-next-line no-restricted-syntax
     for (let move of moves) {
       if (validateMove(current, move)) {
         const [currX, currY] = current.vertex;

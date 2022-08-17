@@ -10,6 +10,8 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "prefer-const": "off"
+        "prefer-const": "off",
+        "no-restricted-syntax": "off",
+        "no-console": "off"
     }
 }
